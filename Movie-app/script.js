@@ -29,7 +29,7 @@ function showMovies(movies) {
             <img src="${IMG_PATH}${poster_path}" alt="${title}">
             <div class="movie__info">
             <h3>${title}</h3>
-            <span class="${getClass(vote_average)}">${vote_average}</span>
+            <span class="${getClassByRate(vote_average)}">${vote_average}</span>
             </div>
             <div class="overview">
             <h3>Overview</h3>
@@ -56,7 +56,8 @@ function getClassByRate(vote) {
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const inputValue = search.value
+    const searchTerm
+     = search.value
 
     if(searchTerm && searchTerm !== '') {
         getMovies(SEARCH_API + searchTerm)
