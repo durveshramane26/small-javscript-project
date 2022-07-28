@@ -39,3 +39,31 @@ function showMovies(movies) {
             main.appendChild(movieEl)
     })
 }
+
+function getClassByRate(vote) {
+    if(vote >= 8) {
+        return 'green'
+    }
+    else if(vote >= 5) {
+        return 'orange'
+    }
+    else {
+        return 'red'
+    }
+}
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const inputValue = search.value
+
+    if(searchTerm && searchTerm !== '') {
+        getMovies(SEARCH_API + searchTerm)
+
+        search.value = ''
+    }
+    else {
+        window.location.reload()
+    }
+})
