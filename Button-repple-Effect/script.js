@@ -1,7 +1,7 @@
 const buttons = document.querySelector('.ripple')
 
 buttons.forEach(button => {
-    button.addeventlistener('click', e => {
+    button.addEventListener('click', function (e) {
         const x = e.clientX
         const y = e.clientY
 
